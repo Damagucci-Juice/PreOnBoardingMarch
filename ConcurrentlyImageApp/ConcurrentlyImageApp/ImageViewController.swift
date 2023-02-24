@@ -8,13 +8,15 @@
 import UIKit
 
 class ImageViewController: UIViewController {
-
+    
     private let imageService = ImageService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
     }
+    
+    @IBOutlet var imageViews: [UIImageView]!
     
     @IBOutlet weak var imageView1: UIImageView!
     
@@ -93,20 +95,22 @@ class ImageViewController: UIViewController {
     }
     
     @IBAction func tappedLoadAllImages(_ sender: Any) {
-        tappedLoadImage1(sender)
-        tappedLoadImage2(sender)
-        tappedLoadImage3(sender)
-        tappedLoadImage4(sender)
-        tappedLoadImage5(sender)
+        for imageView in imageViews {
+            imageService.loadImage { result in
+                switch result {
+                case .success(let imageSource):
+                    Task { imageView.image = UIImage(data: imageSource) }
+                case .failure(let error):
+                    debugPrint(error)
+                    Task { imageView.image = UIImage(systemName: "photo") }
+                }
+            }
+        }
     }
     
     @IBAction func tappedRemoveAllImages(_ sender: Any) {
-        Task {
-            self.imageView1.image = UIImage(systemName: "photo")
-            self.imageView2.image = UIImage(systemName: "photo")
-            self.imageView3.image = UIImage(systemName: "photo")
-            self.imageView4.image = UIImage(systemName: "photo")
-            self.imageView5.image = UIImage(systemName: "photo")
+        for imageView in imageViews {
+            Task { imageView.image = UIImage(systemName: "photo") }
         }
     }
 }
