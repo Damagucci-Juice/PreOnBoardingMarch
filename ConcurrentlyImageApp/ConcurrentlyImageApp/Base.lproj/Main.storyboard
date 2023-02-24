@@ -38,6 +38,9 @@
                                                 <rect key="frame" x="301.33333333333331" y="43" width="61.666666666666686" height="34.333333333333343"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="tappedLoadImage1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5MF-nx-YZs"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -62,6 +65,9 @@
                                                 <rect key="frame" x="301.33333333333331" y="43" width="61.666666666666686" height="34.333333333333343"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="tappedLoadImage2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2N-gO-E7h"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -86,6 +92,9 @@
                                                 <rect key="frame" x="301.33333333333331" y="43" width="61.666666666666686" height="34.333333333333343"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="tappedLoadImage3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Yh-Io-eYF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -110,6 +119,9 @@
                                                 <rect key="frame" x="301.33333333333331" y="43" width="61.666666666666686" height="34.333333333333343"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="tappedLoadImage4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0A8-2G-6G5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -134,6 +146,9 @@
                                                 <rect key="frame" x="301.33333333333331" y="43" width="61.666666666666686" height="34.333333333333343"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="tappedLoadImage5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9CE-8P-Y5v"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -143,9 +158,20 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNq-0m-BdZ">
-                                <rect key="frame" x="42.333333333333343" y="758" width="308.33333333333326" height="34.333333333333371"/>
+                                <rect key="frame" x="42.333333333333343" y="735" width="308.33333333333326" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Load All Images"/>
+                                <connections>
+                                    <action selector="tappedLoadAllImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OuN-CG-fq8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2k-HW-SUa">
+                                <rect key="frame" x="115" y="782.66666666666663" width="163" height="54.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="remove All Images"/>
+                                <connections>
+                                    <action selector="tappedRemoveAllImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MvD-al-RXv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -153,12 +179,22 @@
                         <constraints>
                             <constraint firstItem="CNq-0m-BdZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Cy-Vi-dQf"/>
                             <constraint firstItem="Crc-Hf-dlV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="CiM-59-RrI"/>
+                            <constraint firstItem="R2k-HW-SUa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="115" id="Kxv-Ha-blM"/>
                             <constraint firstItem="CNq-0m-BdZ" firstAttribute="width" secondItem="v2d-pA-Qh3" secondAttribute="width" multiplier="0.85" id="aCM-s4-e9E"/>
                             <constraint firstItem="Crc-Hf-dlV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nZE-pN-S61"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Crc-Hf-dlV" secondAttribute="trailing" constant="15" id="pfW-W9-GCX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CNq-0m-BdZ" secondAttribute="bottom" constant="25.670000000000002" id="vSj-Fy-myB"/>
+                            <constraint firstAttribute="bottom" secondItem="R2k-HW-SUa" secondAttribute="bottom" constant="15" id="y4H-Il-6j2"/>
+                            <constraint firstItem="R2k-HW-SUa" firstAttribute="top" secondItem="CNq-0m-BdZ" secondAttribute="bottom" constant="13.33" id="z4R-By-WXe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R2k-HW-SUa" secondAttribute="trailing" constant="115" id="zEg-Ud-6aR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView1" destination="Hf4-2B-gG1" id="Eyi-Vo-uHS"/>
+                        <outlet property="imageView2" destination="SaS-hB-6KY" id="dWB-6M-Q2b"/>
+                        <outlet property="imageView3" destination="w5N-wp-VQD" id="uq1-uG-oD6"/>
+                        <outlet property="imageView4" destination="i4K-jj-JcV" id="oQ7-Ul-A9l"/>
+                        <outlet property="imageView5" destination="KeY-29-kS6" id="Ri7-5n-THb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
