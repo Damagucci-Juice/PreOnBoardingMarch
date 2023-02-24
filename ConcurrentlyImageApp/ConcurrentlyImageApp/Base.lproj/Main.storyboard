@@ -194,6 +194,11 @@
                         <outlet property="imageView3" destination="w5N-wp-VQD" id="uq1-uG-oD6"/>
                         <outlet property="imageView4" destination="i4K-jj-JcV" id="oQ7-Ul-A9l"/>
                         <outlet property="imageView5" destination="KeY-29-kS6" id="Ri7-5n-THb"/>
+                        <outletCollection property="imageViews" destination="i4K-jj-JcV" collectionClass="NSMutableArray" id="HrI-bA-9l8"/>
+                        <outletCollection property="imageViews" destination="Hf4-2B-gG1" collectionClass="NSMutableArray" id="bj2-7Y-AdA"/>
+                        <outletCollection property="imageViews" destination="SaS-hB-6KY" collectionClass="NSMutableArray" id="810-fk-xeX"/>
+                        <outletCollection property="imageViews" destination="w5N-wp-VQD" collectionClass="NSMutableArray" id="h92-kJ-6Dy"/>
+                        <outletCollection property="imageViews" destination="KeY-29-kS6" collectionClass="NSMutableArray" id="18d-1s-3Yg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
