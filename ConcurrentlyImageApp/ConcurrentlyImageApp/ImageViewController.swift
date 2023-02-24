@@ -9,6 +9,8 @@ import UIKit
 
 class ImageViewController: UIViewController {
 
+    private let imageService = ImageService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -26,41 +28,66 @@ class ImageViewController: UIViewController {
     
     
     @IBAction func tappedLoadImage1(_ sender: Any) {
-        loadImage { image in
-            Task {
-                self.imageView1.image = image
+        imageService.loadImage { result in
+            switch result {
+            case .success(let imageSource):
+                Task {
+                    self.imageView1.image = UIImage(data: imageSource)
+                }
+            case .failure(let error):
+                return debugPrint(error)
             }
         }
     }
     
     @IBAction func tappedLoadImage2(_ sender: Any) {
-        loadImage { image in
-            Task {
-                self.imageView2.image = image
+        imageService.loadImage { result in
+            switch result {
+            case .success(let imageSource):
+                Task {
+                    self.imageView2.image = UIImage(data: imageSource)
+                }
+            case .failure(let error):
+                return debugPrint(error)
             }
         }
     }
     
     @IBAction func tappedLoadImage3(_ sender: Any) {
-        loadImage { image in
-            Task {
-                self.imageView3.image = image
+        imageService.loadImage { result in
+            switch result {
+            case .success(let imageSource):
+                Task {
+                    self.imageView3.image = UIImage(data: imageSource)
+                }
+            case .failure(let error):
+                return debugPrint(error)
             }
         }
     }
     
     @IBAction func tappedLoadImage4(_ sender: Any) {
-        loadImage { image in
-            Task {
-                self.imageView4.image = image
+        imageService.loadImage { result in
+            switch result {
+            case .success(let imageSource):
+                Task {
+                    self.imageView4.image = UIImage(data: imageSource)
+                }
+            case .failure(let error):
+                return debugPrint(error)
             }
         }
     }
     
     @IBAction func tappedLoadImage5(_ sender: Any) {
-        loadImage { image in
-            Task {
-                self.imageView5.image = image
+        imageService.loadImage { result in
+            switch result {
+            case .success(let imageSource):
+                Task {
+                    self.imageView5.image = UIImage(data: imageSource)
+                }
+            case .failure(let error):
+                return debugPrint(error)
             }
         }
     }
@@ -82,24 +109,6 @@ class ImageViewController: UIViewController {
             self.imageView5.image = UIImage(systemName: "photo")
         }
     }
-    
-    private func loadImage(completion: @escaping (UIImage?) -> Void) {
-        guard let url = URL(string: "https://picsum.photos/200")
-        else { return }
-        let urlRequest = URLRequest(url: url)
-        
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            guard error == nil,
-                  let statusCode = (response as? HTTPURLResponse)?.statusCode,
-                  let data = data
-            else { return }
-            if 200..<300 ~= statusCode {
-                return completion(UIImage(data: data))
-            }
-            return completion(nil)
-        }
-        
-        task.resume()
-    }
 }
+
 
